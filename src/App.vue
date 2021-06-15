@@ -16,3 +16,5 @@ export default defineComponent({
   }
 });
 </script>
+<style src='@ionic/core/css/core.css'></style>
+<style src='@ionic/core/css/ionic.bundle.css'></style>
