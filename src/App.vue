@@ -13,6 +13,25 @@ export default defineComponent({
   components: {
     IonApp,
     IonRouterOutlet
+  },
+  data() {
+    return {
+      todos: []
+    }
+},
+methods: {
+  async getTodos() {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/users`);
+    this.todos = await res.json();
+  }
+},
+created() {
+  this.getTodos();
+},
+provide() {
+    return {
+      todos: this.todos
+    }
   }
 });
 </script>
